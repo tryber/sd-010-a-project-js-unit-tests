@@ -14,6 +14,9 @@
 
 const average = (param) => {
   let somaNotas = 0;
+  if (param.length < 1) {
+    return undefined;
+  }
   for (let index = 0; index < param.length; index += 1) {
     if (typeof(param[index]) !== 'number') {
       return undefined;
