@@ -26,7 +26,7 @@ const average = (numbers)=> {
 }
 
 
-module.exports = average;
 
+module.exports = average;
 
 
