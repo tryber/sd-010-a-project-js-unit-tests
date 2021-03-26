@@ -20,7 +20,7 @@ const average = (numbers) => {
     }
     sum += numbers[index];
   }
-  return (Math.round(sum/numbers.length));
+  return numbers.length === 0 ? undefined : (Math.round(sum/numbers.length));
 }
-
+console.log(average([2,2]));
 module.exports = average
