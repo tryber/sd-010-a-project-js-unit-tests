@@ -13,11 +13,9 @@
 */
 const average = (array) => {
   let soma = 0;
-
   if (array.length === 0) {
     return undefined;
   };
-
   for (key in array) {
     if (typeof array[key] !== 'number') {
       return undefined;
@@ -25,7 +23,6 @@ const average = (array) => {
       soma += array[key];
     };
   };
-
   return Math.round(soma/array.length);
 };
 
