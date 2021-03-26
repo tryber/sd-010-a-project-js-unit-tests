@@ -9,18 +9,18 @@
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
-    - average([1, '2']) // Retorno: undefined;sss
+    - average([1, '2']) // Retorno: undefined;
 */
 
 const average = (numbers) => {
   let sum = 0;
-  for (index in numbers) {
+  for (let index = 0; index < numbers.length; index += 1) {
     if (typeof numbers[index] !== 'number') {
       return undefined;
     }
     sum += numbers[index];
   }
-  return numbers.length === 0 ? undefined : (Math.round(sum/numbers.length));
-}
+  return numbers.length === 0 ? undefined : (Math.round(sum / numbers.length));
+};
 
-module.exports = average
+module.exports = average;
