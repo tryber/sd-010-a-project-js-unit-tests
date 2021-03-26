@@ -17,6 +17,6 @@ const average = (array) => {};
   for (let index = 0; index < array.lenght; index += 1) {
     sum = sum + array[index];
   }
-  const average = Math.ceil((sum/array.lenght));
+  return Math.ceil((sum/array.lenght));
 
 module.exports = average;
