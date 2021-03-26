@@ -14,10 +14,16 @@
 
 const average = (array) => {
   let sum = 0;
-  for (let index = 0; index < array.lenght; index += 1) {
-    sum = sum + array[index];
+  if (array.length === 0){
+    return undefined;
   }
-  return Math.ceil((sum/array.lenght));
+
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] === 'string'){
+      return undefined;
+    } sum = sum + array[index];
+  }
+  return Math.round(sum/array.length);
 };
 
 module.exports = average; 
