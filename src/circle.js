@@ -29,5 +29,5 @@ const circle = (radius) => {
   circleInformation.circumference = (2 * PI * radius);
   return circleInformation;
 }
-console.log(circle(3));
+
 module.exports = circle;
