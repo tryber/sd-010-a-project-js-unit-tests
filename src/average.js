@@ -22,5 +22,5 @@ const average = (numbers) => {
   }
   return numbers.length === 0 ? undefined : (Math.round(sum/numbers.length));
 }
-console.log(average([2,2]));
+
 module.exports = average
