@@ -22,8 +22,4 @@ const average = (array) => {
   return sum;
 }
 
-console.log(average([2, 2]));
-console.log(average([1, 1]));
-console.log(average([1, '2']));
-
 module.exports = average
