@@ -13,18 +13,18 @@
 */
 
 const average = (array) => {
-   let conta = 0;
-    for (let index = 0; index < array.length; index +=1 ){
-      if(typeof(array[index]) !== 'number'){
-        return undefined
-      } else {
-        conta += array[index] / array.length
-      }
+  let conta = 0;
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof (array[index]) !== 'number') {
+      return undefined
+    } else {
+      conta += array[index] / array.length
     }
-    return Math.round(conta)
-    
+  }
+  return Math.round(conta)
+
 }
-  
+
 console.log(average([1, 2]))
 
 module.exports = average;
