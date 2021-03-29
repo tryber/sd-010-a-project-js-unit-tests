@@ -50,6 +50,8 @@ const average = (numbers)=> {
    return Math.round(soma / numbers.length);
  }
 
+
+ 
  
 
 
