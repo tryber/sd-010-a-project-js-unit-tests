@@ -11,11 +11,18 @@
   Comportamento:
     vqv(Tunico, 30) // Retorna:
       'Oi, meu nome é Tunico!
-      Tenho 30 anos,
+      tenho 30 anos,
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  const trybe = 'Trybe e mando muito em programação!';
+  if (nome === undefined && idade === undefined) {
+    return undefined;
+  }
+  return `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na ${trybe}\n#VQV!`;
+};
+console.log(vqv('Tunico', 29));
 
 module.exports = vqv;
