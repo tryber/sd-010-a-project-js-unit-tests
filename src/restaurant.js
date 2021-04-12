@@ -30,7 +30,7 @@
   - Uma chave `fetchMenu` retorna o objeto que a função `createMenu` recebe por parâmetro. O menu tem sempre duas chaves, `food` e `drink`, no seguinte formato:
 
   const meuRestaurante = createMenu({
-    food: {'coxinha': 3.90, 'sanduiche', 9.90},
+    food: {'coxinha': 3.90, 'sanduiche': 9.90},
     drinks: {'agua': 3.90, 'cerveja': 6.90}
   });
 
@@ -79,6 +79,40 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (received) => {
+  const consumption = [];
+  const obj = {
+    fetchMenu: () => received,
+    consumption,
+    order: (ordered) => {
+      consumption.push(ordered);
+      return consumption;
+    },
+    pay: () => {
+      const { food, drink } = received;
+      let total = 0;
+      for (let i = 0; i < consumption.length; i += 1) {
+        if (Object.keys(food).includes(consumption[i])) {
+          total += Object.values(food)[i];
+        }
+        if (Object.keys(drink).includes(consumption[i])) {
+          total += Object.values(drink)[i];
+        }
+      }
+      return total;
+    },
+  };
+  return obj;
+};
+
+const objetoRetornado = createMenu({
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drink: { agua: 3.90, cerveja: 6.90 },
+});
+objetoRetornado.order('coxinha');
+objetoRetornado.order('agua');
+objetoRetornado.order('coxinha');
+
+console.log(objetoRetornado.pay());
 
 module.exports = createMenu;

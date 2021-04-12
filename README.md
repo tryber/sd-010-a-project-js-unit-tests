@@ -84,13 +84,13 @@ Você implementará várias funções para atender aos requisitos propostos e/ou
     * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
     * Exemplo: `git checkout -b joaozinho-js-unit-tests`
 
-4. Faça as alterações em, por exemplo, alguma das funções que precisam de implementação. Por exemplo, a `average.js` em `src/`:
+4. Faça as alterações em, por exemplo, alguma das funções que precisam de implementação. Por exemplo, a `numbers.js` em `src/`:
 ```jsx
-const average = () => {
+const numbers = () => {
   // add your implementation here
 }
 
-module.exports = average
+module.exports = numbers
 ```
 
 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
@@ -158,9 +158,9 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
   5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
   6. `npm test` _(executa todos os testes presentes na aplicação)_
   7. `npm test path/to/file` _(executa apenas os testes presentes no arquivo path/to/file)_
-    * exemplo: `npm test tests/average.spec.js`
+    * exemplo: `npm test tests/numbers.spec.js`
   8. `jest path/to/file` _(executa apenas os testes presentes no arquivo path/to/file)_
-    * exemplo: `jest tests/average.spec.js`
+    * exemplo: `jest tests/numbers.spec.js`
 
 ### ESLint
 
