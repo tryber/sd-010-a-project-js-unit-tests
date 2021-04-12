@@ -79,6 +79,38 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+function orderFromMenu(string) {
+  this.consumption.push(string);
+}
+
+function totalPayment() {
+  let total = 0;
+  const consumo = this.consumption;
+  const { food, drink } = this.fetchMenu();
+  const foods = Object.keys(food);
+  const drinks = Object.keys(drink);
+
+  for (let index = 0; index < consumo.length; index += 1) {
+    if (foods.includes(consumo[index])) {
+      total += food[consumo[index]];
+    }
+    if (drinks.includes(consumo[index])) {
+      total += drink[consumo[index]];
+    }
+  }
+  return total + (0.1 * total);
+}
+
+const createMenu = (menu) => ({
+  fetchMenu: () => ({
+    food: Object.values(menu)[0],
+    drink: Object.values(menu)[1],
+  }),
+  consumption: [],
+  order: orderFromMenu,
+  pay: totalPayment,
+});
 
 module.exports = createMenu;
+
+// Source: consulta ao repositório do Anderson Silva: https://github.com/tryber/sd-010-a-project-js-unit-tests/pull/120 //
