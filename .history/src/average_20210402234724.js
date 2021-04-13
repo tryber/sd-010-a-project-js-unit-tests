@@ -12,8 +12,8 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (array) => {
-  let sumOfArray = 0;
+const average = () => {
+  et sumOfArray = 0;
   if (array.length < 1) {
     return undefined;
   }
