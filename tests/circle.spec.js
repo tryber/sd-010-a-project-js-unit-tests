@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
+const { ENOTSUP } = require('constants');
 const circle = require('../src/circle');
 
 /*
@@ -24,14 +25,17 @@ const circle = require('../src/circle');
 */
 
 describe('#circle', () => {
-  it('given a radius, should return an object with circles info', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle retorna um objeto.
-    // Teste se o objeto retornado tem 3 entradas.
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+  it('given a radius, should return an object with circles info', () => { // ESCREVA SEUS TESTES ABAIXO:
+    assert.strictEqual(typeof circle([]), 'object'); // Teste se circle retorna um objeto.
+    assert.strictEqual((Object.entries(circle(' ')).length), 3); // Teste se o objeto retornado tem 3 entradas.
+    assert.strictEqual(circle(), undefined); // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    assert.strictEqual(circle(2).circumference, 12.56); // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.strictEqual(parseFloat(circle(3).area).toFixed(2), '28.26');
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    const circle3 = circle(3);
+    circle3.area = parseFloat(circle(3).area.toPrecision(4));
+    circle3.circumference = parseFloat(circle(3).circumference.toPrecision(4));
+    assert.deepStrictEqual(circle3, { radius: 3, area: 28.26, circumference: 18.84 });
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
   });
 });
