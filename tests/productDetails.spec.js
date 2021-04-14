@@ -33,7 +33,24 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    assert.ok(typeof productDetails('Alcool gel', 'Máscara') === 'object');
+    assert.ok(productDetails('Alcool teste', 'Máscara').length === 2);
+    assert.ok(
+      typeof productDetails('Alcool 50%', 'Máscara')[0] === 'object'
+        && typeof productDetails('Alcool isopropílico', 'Máscara')[1] === 'object',
+    );
+    assert.ok(
+      productDetails('Alcool 70%', 'Máscara')[0]
+        !== productDetails('Alcool etílico', 'Máscara')[1],
+    );
+    assert.ok(
+      /123$/.test(
+        productDetails('Alcool 40%', 'Máscara')[0].details.productId,
+      )
+        && /123$/.test(
+          productDetails('Alcool gel', 'Máscara')[1].details.productId,
+        ),
+    );
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
