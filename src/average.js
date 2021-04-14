@@ -11,7 +11,25 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
-const average = () => {};
-
+let parameter = [1, 2, 3, 4, 5];
+const average = (parameter1) => {
+  if (parameter1.length === 0) {
+    return undefined;
+  }
+  for (let index in parameter1) {
+    if (typeof parameter1[index] !== 'number') {
+      return undefined;
+    }
+  }
+  let sun = 0;
+  let result = 0;
+  for (let index = 0; index < parameter1.length; index += 1) {
+    sun += parameter1[index];
+    result = sun / parameter1.length;
+  }
+  return Math.round(result);
+};
+console.log(average(['7']));
+console.log(average([]));
+console.log(average([7, 8]));
 module.exports = average;
