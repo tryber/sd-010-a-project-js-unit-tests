@@ -24,8 +24,8 @@
   ]
 */
 
-const productDetails = (firstProduct, secondProduct) => [
-  {
+const productDetails = (firstProduct, secondProduct) => {
+  const array = [{
     name: firstProduct,
     details: {
       productId: `${firstProduct}123`,
@@ -36,7 +36,8 @@ const productDetails = (firstProduct, secondProduct) => [
     details: {
       productId: `${secondProduct}123`,
     },
-  },
-];
+  }];
+  return array;
+};
 
 module.exports = productDetails;
