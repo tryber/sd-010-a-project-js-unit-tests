@@ -14,7 +14,15 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
+// codigo feito com ajuda do estudante Gabriel Pereira-turma10-tribo-A (chamada via slack)
 
-const createStudent = () => {};
-
+const createStudent = (name) => {
+  let student = {
+    name,
+    feedback: () => ('Eita pessoa boa!'),
+  };
+  return student;
+};
+// const estudante = createStudent('ze');
+// console.log(estudante.name);
 module.exports = createStudent;
