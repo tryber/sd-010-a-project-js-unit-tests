@@ -2,7 +2,6 @@
 
 const assert = require('assert');
 const average = require('../src/average');
-
 /*
   A função average recebe um array (tamanho variável) e retorna a média dos valores recebidos.
   Caso a função receba algum valor não númerico ou um array vazio, o valor undefined deve ser retornado.
@@ -17,6 +16,7 @@ const average = require('../src/average');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+module.exports = average;
 
 describe('#average', () => {
   it('tests function average\'s behaviour as specified', () => {
