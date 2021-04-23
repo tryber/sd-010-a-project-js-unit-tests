@@ -11,7 +11,21 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+const average = (array) => {
+  const checkValues = () => {
+    const allNumbers = array.every((element) => typeof element === 'number'); // true se nao achar nao-numeros
+    const notEmpty = array.length !== 0;
 
-const average = () => {};
+    if (allNumbers && notEmpty === true) return true;
+  };
+
+  const sumMedia = () => {
+    const sum = array.reduce((acumulator, currentValue) => (acumulator + currentValue));
+    const media = Math.round(sum / array.length);
+    return media;
+  };
+
+  return checkValues() ? sumMedia() : undefined;
+};
 
 module.exports = average;
