@@ -19,6 +19,14 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (param1, param2) => param1 + param2,
+
+  mult: (param1, param2) => param1 * param2,
+
+  div: (param1, param2) => Math.trunc(param1 / param2),
+  // Acredito que o correto seria Math.random ou simples /, porém o teste pede para que retorne 2
+  sub: (param1, param2) => param1 - param2,
+};
 
 module.exports = calculator;
