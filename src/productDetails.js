@@ -1,29 +1,3 @@
-/*
-  Dadas duas strings que representam nomes de produtos,
-  retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
-
-  Parâmetros:
-  - Uma string;
-  - Uma string;
-
-  Comportamento:
-  productDetails('Alcool gel', 'Máscara') // Retorna:
-  [
-    {
-      name: 'Alcool gel'
-      details: {
-        productId: 'Alcool gel123'
-      }
-    },
-    {
-      name: 'Máscara'
-      details: {
-        productId: 'Máscara123'
-      }
-    }
-  ]
-*/
-
 const productDetails = (firstProduct, secondProduct) => [
   {
     name: firstProduct,
@@ -38,5 +12,28 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
+
+const callFunction = productDetails('Alcool gel', 'Máscara');
+
+// console.log(callFunction);
+
+// const isObject = (objects) => {
+//   const ts = objects.map((object) => {
+//     const test = object.toString() === '[object Object]' ? 'object' : 'notObject';
+//     console.log(test);
+//     return test;
+//   });
+//   console.log(ts);
+//   return ts;
+// };
+// console.log(isObject(callFunction));
+
+// const isObject = (objects) => {
+//   if (objects[0].toString() === '[object Object]' && objects[1].toString() === '[object Object]') {
+//     return true;
+//   }
+//   return false;
+// };
+// console.log(isObject(callFunction));
 
 module.exports = productDetails;
