@@ -30,15 +30,22 @@ const productDetails = require('../src/productDetails');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+// Referência para resolução do ultimo teste: https://github.com/tryber/sd-010-a-project-js-unit-tests/pull/111/files;
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
+    assert.strictEqual(typeof productDetails('bolacha', 'quiabo'), 'object');
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(productDetails('bolacha', 'pão').length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.strictEqual(typeof productDetails('bolacha', 'pão')[0], 'object');
+    assert.strictEqual(typeof productDetails('bolacha', 'pão')[1], 'object');
     // Teste que os dois objetos são diferentes entre si.
+    assert.notStrictEqual(productDetails('bolacha', 'pão')[0], productDetails('bolacha', 'pão')[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
+    assert.strictEqual(productDetails('bolacha', 'pão')[0].details.productId, `${'bolacha'}123`);
+    assert.strictEqual(productDetails('bolacha', 'pão')[1].details.productId, `${'pão'}123`);
   });
 });
