@@ -28,4 +28,8 @@ const circle = (radius) => {
   };
 };
 
+// console.log(typeof obj);
+console.log(circle(3));
+console.log(circle(2));
+// console.log(parseFloat((Object.values(circle(3))[1]).toPrecision(2)));
 module.exports = circle;
