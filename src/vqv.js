@@ -15,7 +15,23 @@
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
+// Código feito com ajuda do Viana
+// Link: https://pt.stackoverflow.com/questions/173221/como-checar-se-uma-string-est%C3%A1-vazia-em-javascript/173226
+const vqv = (nome, idade) => {
+  let mensagem;
 
-const vqv = (nome, idade) => {};
+  if (!nome && !idade) {
+    return undefined;
+  }
+
+  mensagem = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+
+  return mensagem;
+};
+
+vqv('Tunico', 30);
 
 module.exports = vqv;
