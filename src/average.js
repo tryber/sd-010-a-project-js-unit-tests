@@ -9,9 +9,19 @@
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
-    - average([1, '2']) // Retorno: undefined;
+    - average([1, '2']) // Retorno: undefined; 
 */
 
-const average = () => {};
+/* Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce */
+
+const average = (array) => {
+  if (array.length === 0) return undefined;
+
+  const media = array.reduce((acumulador, valorAtual) => acumulador + valorAtual);
+
+  if (typeof (media) !== 'number') return undefined;
+
+  return Math.round(media / array.length);
+};
 
 module.exports = average;
