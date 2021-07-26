@@ -46,7 +46,7 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-//
+
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -79,6 +79,28 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const addConsumption = (value, func) => {
+  func.consumption.push(value);
+};
+
+const sumPay = (func, object) => {
+  const products = func.consumption;
+  const menu = func.fetchMenu;
+  let productsValue = [];
+  products.forEach((product) => {
+    productsValue.push(menu[product].value);
+    return productsValue;
+  });
+  const reducer = (added, nexValue) => added + nexValue;
+  let total = productsValue.reduce(reducer);
+  return total + (total * 0.10);
+};
+
+const createMenu = (object) => ({
+  fetchMenu: () => ({ object }),
+  consumption: [],
+  order: addConsumption,
+  pay: sumPay,
+});
 
 module.exports = createMenu;
