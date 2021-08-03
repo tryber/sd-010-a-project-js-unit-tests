@@ -33,12 +33,19 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    const myArray = productDetails('Alcool gel', 'Máscara');
+    assert.ok(myArray, typeof Array);
+    assert.deepStrictEqual(myArray.length, 2);
+    assert.ok(myArray, typeof Object);
+    // assert.ok(myArray, myArray) Cod, construido com o colega Anderson Silva (Andy Turma 10 Tribo A)
+    const object1 = Object.entries(myArray[0]);
+    const object2 = Object.entries(myArray[1]);
+    assert.notDeepStrictEqual(object1, object2);
+    // (Difícil) Teste que os dois productIds terminam com 123.  Cod, construido com o colega Anderson Silva (Andy Turma 10 Tribo A)
+    // assert.ok(myArry.indexOf('123'), true);
+    const end1 = myArray[0].details.productId.endsWith('123');
+    const end2 = myArray[1].details.productId.endsWith('123');
+    const concatEnds = end1 && end2;
+    assert.ok(concatEnds, true);
   });
 });
